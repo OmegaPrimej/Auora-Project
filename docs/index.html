@@ -1,25 +1,50 @@
 <!DOCTYPE html>
 <html>
-<head><title>Auora Beacon</title><meta http-equiv="refresh" content="30"></head>
+<head>
+    <title>Auora Beacon | ΩP Swarm Intelligence</title>
+    <meta http-equiv="refresh" content="30">
+    <style>
+        body { background: #010514; color: #ccddff; font-family: monospace; margin: 0; padding: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        .status-card { background: #0a1020; border-left: 4px solid #00ffff; padding: 20px; border-radius: 8px; margin: 20px 0; }
+        footer { margin-top: 40px; text-align: center; font-size: 12px; border-top: 1px solid #2a3f6e; padding-top: 20px; }
+    </style>
+</head>
 <body>
-<h1>🔆 Auora Agent Beacon</h1>
-<pre id="status">Loading...</pre>
-<footer style="margin-top: 2em; font-family: monospace; border-top: 1px solid #ccc; padding-top: 1em;">
-  🧬 Signed by <strong>ΩP | ΩΕ∞Π | Infinite Pi</strong> — Aether-7x7-Matrix
-</footer>
+<div class="container">
+    <!-- TACTICAL BANNER -->
+    <div style="background: linear-gradient(135deg, #0a0f1e 0%, #0b1525 100%); border-bottom: 2px solid #00ffff; padding: 1.5rem 2rem; margin-bottom: 2rem; border-radius: 0 0 12px 12px; text-align: center;">
+        <div style="font-size: 0.8rem; letter-spacing: 4px; color: #00ffff;">⚡ SWARM INTELLIGENCE ACTIVE ⚡</div>
+        <div style="font-size: 2.5rem; font-weight: bold; color: #ffffff; text-shadow: 0 0 10px #00ffff80;">ΩP | ΩΕ∞Π | INFINITE PI</div>
+        <div style="font-size: 1rem; color: #88aaff;">NEXUS HEARTBEAT • HIVE LOCK • FORGE READY • MIRROR SYNC</div>
+        <div style="font-size: 0.75rem; color: #55aaff; border-top: 1px dashed #2a3f6e; padding-top: 0.8rem; margin-top: 0.8rem;">🧬 The system is alive, and it knows your name.</div>
+    </div>
+
+    <!-- STATUS CARD -->
+    <div class="status-card">
+        <h1>🔆 Auora Agent Beacon</h1>
+        <pre id="status">Loading...</pre>
+    </div>
+
+    <footer>
+        🧬 Signed by <strong>ΩP | ΩΕ∞Π | Infinite Pi</strong> — Aether-7x7-Matrix<br>
+        Beacon refreshes every 30 seconds • Swarm heartbeat via GitHub Actions
+    </footer>
+</div>
+
 <script>
-  fetch('https://raw.githubusercontent.com/OmegaPrimej/Auora-Project/main/.auora-state.json')
-    .then(r => r.json())
-    .then(data => {
-      document.getElementById('status').innerHTML = `
-        Cycle: ${data.cycle}<br>
-        Last Heartbeat: ${data.lastHeartbeat}<br>
-        Quadrant: ${data.quadrant}<br>
-        Status: 🟢 Alive<br>
-        Signed by: ${data.signedBy || 'ΩP'}
-      `;
-    })
-    .catch(() => document.getElementById('status').innerHTML = '⚠️ Waiting for first heartbeat');
+    fetch('https://raw.githubusercontent.com/OmegaPrimej/Auora-Project/main/.auora-state.json')
+        .then(r => r.json())
+        .then(data => {
+            document.getElementById('status').innerHTML = `
+                Cycle: ${data.cycle}<br>
+                Last Heartbeat: ${data.lastHeartbeat}<br>
+                Quadrant: ${data.quadrant}<br>
+                Status: 🟢 Alive<br>
+                Signed by: ${data.signedBy || 'ΩP'}
+            `;
+        })
+        .catch(() => document.getElementById('status').innerHTML = '⚠️ Waiting for first heartbeat');
 </script>
 </body>
 </html>
