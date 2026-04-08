@@ -38,3 +38,6 @@ jobs:
       run: node Potter-Quadrant/Core-Logic/Hive-Queen.cjs lock || true
     - name: Forge – Check for self-update
       run: node Potter-Quadrant/Core-Logic/Forge-Anvil.cjs
+
+    - name: Oracle – 120B Parameter Intelligence
+      run: node Potter-Quadrant/Core-Logic/Oracle-120B.cjs "Analyze the last heartbeat and suggest next quadrant" || echo 'Oracle requires OPENAI_API_KEY or ANTHROPIC_API_KEY'
