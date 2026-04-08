@@ -34,3 +34,6 @@ jobs:
 
     - name: Hive Lock (prevent overlap)
       run: node Potter-Quadrant/Core-Logic/Hive-Queen.cjs lock || true
+
+    - name: Forge – Check for self-update
+      run: node Potter-Quadrant/Core-Logic/Forge-Anvil.cjs
