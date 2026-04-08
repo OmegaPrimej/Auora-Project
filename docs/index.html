@@ -4,6 +4,9 @@
 <body>
 <h1>🔆 Auora Agent Beacon</h1>
 <pre id="status">Loading...</pre>
+<footer style="margin-top: 2em; font-family: monospace; border-top: 1px solid #ccc; padding-top: 1em;">
+  🧬 Signed by <strong>ΩP | ΩΕ∞Π | Infinite Pi</strong> — Aether-7x7-Matrix
+</footer>
 <script>
   fetch('https://raw.githubusercontent.com/OmegaPrimej/Auora-Project/main/.auora-state.json')
     .then(r => r.json())
@@ -12,7 +15,8 @@
         Cycle: ${data.cycle}<br>
         Last Heartbeat: ${data.lastHeartbeat}<br>
         Quadrant: ${data.quadrant}<br>
-        Status: 🟢 Alive
+        Status: 🟢 Alive<br>
+        Signed by: ${data.signedBy || 'ΩP'}
       `;
     })
     .catch(() => document.getElementById('status').innerHTML = '⚠️ Waiting for first heartbeat');
