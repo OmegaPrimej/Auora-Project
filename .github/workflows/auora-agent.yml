@@ -1,0 +1,16 @@
+name: Auora Autonomous Agent
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+    - name: Wake Auora
+      run: |
+        mkdir -p Potter-Quadrant/Hardware-Protocols Potter-Quadrant/Runtime-Aether Potter-Quadrant/Core-Logic
+        node Potter-Quadrant/Core-Logic/Omni-Channel.cjs
