@@ -1,1 +1,3 @@
-# Auora Project\nHost: Jesse Camacho\nStatus: Automated Build Initialized
+# Auora Project
+Host: Jesse Camacho
+Status: Automated Build Initialized

@@ -1,1 +1,5 @@
-def pulse():\n    print('Auora Channel Active')\n\nif __name__ == '__main__':\n    pulse()
+def pulse():
+    print('Auora Channel Active: System Online')
+
+if __name__ == '__main__':
+    pulse()
