@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><title>Auora Beacon</title><meta http-equiv="refresh" content="30"></head>
+<body>
+<h1>🔆 Auora Agent Beacon</h1>
+<pre id="status">Loading...</pre>
+<script>
+  fetch('https://raw.githubusercontent.com/OmegaPrimej/Auora-Project/main/.auora-state.json')
+    .then(r => r.json())
+    .then(data => {
+      document.getElementById('status').innerHTML = `
+        Cycle: ${data.cycle}<br>
+        Last Heartbeat: ${data.lastHeartbeat}<br>
+        Quadrant: ${data.quadrant}<br>
+        Status: 🟢 Alive
+      `;
+    })
+    .catch(() => document.getElementById('status').innerHTML = '⚠️ Waiting for first heartbeat');
+</script>
+</body>
+</html>

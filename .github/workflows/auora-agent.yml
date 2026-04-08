@@ -31,3 +31,6 @@ jobs:
         git push origin main
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Hive Lock (prevent overlap)
+      run: node Potter-Quadrant/Core-Logic/Hive-Queen.cjs lock || true
